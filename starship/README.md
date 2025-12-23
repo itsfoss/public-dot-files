@@ -31,3 +31,10 @@ Change the path accordingly.
 
 ![XmasPrompt Starship Config screenshot](./screenshots/xmasship-prompt.png)
 
+## Installer Script
+
+You can use the following command to install the theme.
+
+```
+bash -c "$(curl -sSL https://raw.githubusercontent.com/itsfoss/public-dot-files/main/starship/installer.sh)"
+```

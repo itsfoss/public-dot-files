@@ -65,16 +65,16 @@
     {
       "type": "memory",
       "outputColor": "38;5;22",
-      "key": "〔 󰨦 Memory             〕",
+      "key": "〔 󰨦 Memory            〕",
       "keyColor": "38;5;203",
-      "format": "〔󱛱 {used} / {total}                    〕",
+      "format": "〔󱛱 {used} / {total}                     〕",
     },
     {
       "type": "disk",
       "outputColor": "38;5;22",
-      "key": "〔 󰨦 Disk Usage          〕",
+      "key": "〔 󰨦 Disk Usage        〕",
       "keyColor": "38;5;203",
-      "format": "〔󱛱 {size-used} / {size-total}                 〕",
+      "format": "〔󱛱 {size-used} / {size-total}                   〕",
     },
     {
       "type": "display",
