@@ -46,28 +46,26 @@ check_deps() {
 # --- Terminal Check ---
 # Warns users on terminals that may not render images well
 perform_terminal_check() {
-    local fallback_terminals=("gnome-terminal" "konsole" "xterm" "terminator")
-    local current_terminal_name=""
-
-    if [ -n "$GNOME_TERMINAL_SCREEN" ]; then
-        current_terminal_name="gnome-terminal"
-    elif [ -n "$KONSOLE_VERSION" ]; then
-        current_terminal_name="konsole"
+    # Whitelist of terminals known to work well with images
+    if [[ "$TERM" == "xterm-kitty" || "$TERM" == "ghostty" ]]; then
+        # Terminal is on the whitelist, so we do nothing.
+        return 0
     fi
 
-    if [ -n "$current_terminal_name" ]; then
-        echo -e "${YELLOW}Warning:${NC} Your terminal ($current_terminal_name) might not display images from fastfetch correctly."
-        echo "For the best experience with image support, consider using Kitty, Ghostty, or another compatible terminal."
+    # If we're here, the terminal is not on the whitelist. Issue a warning.
+    local current_terminal=${TERM:-"unknown"} # Use $TERM as a default identifier
 
-        while true; do
-            read -p "Do you want to continue anyway? (y/n): " yn
-            case $yn in
-                [Yy]* ) break;;
-                [Nn]* ) echo "Aborting."; exit 0;;
-                * ) echo "Invalid input. Please answer y or n.";;
-            esac
-        done
-    fi
+    echo -e "${YELLOW}Warning:${NC} Your terminal (${current_terminal}) may not display images correctly."
+    echo "For the best experience, this script recommends using Kitty or Ghostty."
+
+    while true; do
+        read -p "Do you want to continue anyway? (y/n): " yn
+        case $yn in
+            [Yy]* ) break;;
+            [Nn]* ) echo "Aborting."; exit 0;;
+            * ) echo "Invalid input. Please answer y or n.";;
+        esac
+    done
 }
 
 # --- Main Logic ---
@@ -110,7 +108,8 @@ main() {
             exit 1
         fi
 
-        local options=()    for file in "${files[@]}"; do
+        local options=()
+    for file in "${files[@]}"; do
         local pretty_name=$(basename "$file" .jsonc | sed -e 's/_/ /g' -e 's/\b\(.\)/\u\1/g')
         options+=("$pretty_name")
     done

@@ -52,7 +52,10 @@ fastfetch --config ~/.config/fastfetch/sample_1.jsonc
 
 The above configuration works best in wide terminal (100x25).
 
+## Automatic installer script
 
+This is still a work in progress. The above manual method is safe, but you can use this script to install it:
 
-
-
+```
+bash -c "$(curl -sSL https://raw.githubusercontent.com/itsfoss/public-dot-files/main/fastfetch/installer.sh)"
+```
