@@ -50,6 +50,10 @@ fastfetch --config ~/.config/fastfetch/sample_1.jsonc
 
 ![Ordered Sections Configuration screenshot](./screenshots/ordered-sections.png)
 
+[Christmas Fastfetch Configuration](./christmas.jsonc)
+
+![Christmas Fastfetch Configuration screenshot](./screenshots/christmas-fastfetch-theme.png)
+
 The above configuration works best in wide terminal (100x25).
 
 ## Automatic installer script
