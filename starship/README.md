@@ -15,14 +15,19 @@ Change the path accordingly.
 
 ## Here are the config file and screenshots.
 
-[Nord Segments](./nord_segments.toml)
+[Nord Segments config](./nord_segments.toml)
 
 ![Nord Segements screenshot](./screenshots/nord_segments.png)
 
-[Fiery](./fiery.toml)
+[Fiery config](./fiery.toml)
 
 ![Fiery Prompt screenshot](./screenshots/fiery.png)
 
-[Connected Dots](./connected_dots.toml)
+[Connected Dots config](./connected_dots.toml)
 
 ![Connected Dots screenshot](./screenshots/connected_dots.png)
+
+[XmasPrompt Config](./xmasprompt.toml)
+
+![XmasPrompt Starship Config screenshot](./screenshots/xmasship-prompt.png)
+
